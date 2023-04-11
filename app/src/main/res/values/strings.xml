@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">RickAndMortyAPI</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <!-- Strings From Home -->
+    <string name="description_image">Imagem sem legenda</string>
+    <string name="text_name">Nome</string>
+    <string name="text_status">Status</string>
+    <string name="text_last_location">Última localização conhecida:</string>
+    <string name="text_location">Localização</string>
+    <string name="text_first_seen_in">Visto pela primeira vez em:</string>
+    <string name="text_seen_in">Visto em</string>
+</resources>
