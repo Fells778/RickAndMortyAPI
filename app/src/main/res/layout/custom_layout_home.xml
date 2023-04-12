@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView_custom_home"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -16,17 +17,17 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
+            android:id="@+id/imageView_custom_home"
+            android:layout_width="125dp"
             android:layout_height="0dp"
+            android:contentDescription="@string/description_image"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_launcher_foreground"
-            android:contentDescription="@string/description_image" />
+            app:srcCompat="@drawable/ic_launcher_foreground" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView_name_custom_home"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -37,19 +38,30 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+            app:layout_constraintStart_toEndOf="@+id/imageView_custom_home"
+            app:layout_constraintTop_toTopOf="@+id/imageView_custom_home" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView_status_custom_home"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:text="@string/text_status"
             android:textColor="@color/white"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView"
-            app:layout_constraintStart_toEndOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintStart_toEndOf="@+id/view_alive_custom_home"
+            app:layout_constraintTop_toBottomOf="@+id/textView_name_custom_home" />
+
+        <TextView
+            android:id="@+id/textView_species_custom_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/text_species"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/textView_status_custom_home"
+            app:layout_constraintTop_toTopOf="@+id/textView_status_custom_home" />
 
         <TextView
             android:id="@+id/textView3"
@@ -57,15 +69,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/text_last_location"
-            android:textSize="14sp"
             android:textColor="#959595"
+            android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/textView2"
-            app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintEnd_toEndOf="@+id/textView_name_custom_home"
+            app:layout_constraintStart_toStartOf="@+id/textView_name_custom_home"
+            app:layout_constraintTop_toBottomOf="@+id/textView_status_custom_home" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/text_view_last_location_custom_home"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/text_location"
@@ -82,12 +94,12 @@
             android:text="@string/text_first_seen_in"
             android:textStyle="bold"
             android:textColor="#959595"
-            app:layout_constraintEnd_toEndOf="@+id/textView4"
-            app:layout_constraintStart_toStartOf="@+id/textView4"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintEnd_toEndOf="@+id/text_view_last_location_custom_home"
+            app:layout_constraintStart_toStartOf="@+id/text_view_last_location_custom_home"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_last_location_custom_home" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/textView_see_last_custom_home"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -99,10 +111,11 @@
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <View
-            android:id="@+id/view"
+            android:id="@+id/view_alive_custom_home"
             android:layout_width="15dp"
             android:layout_height="15dp"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintStart_toStartOf="@+id/textView_name_custom_home"
+            app:layout_constraintTop_toBottomOf="@+id/textView_name_custom_home" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

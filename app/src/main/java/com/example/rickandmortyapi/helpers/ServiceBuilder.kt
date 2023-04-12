@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object ServiceBuilder {
-    private const val BASE_URL = "https://rickandmortyapi.com/api/"
+    private const val BASE_URL = "https://rickandmortyapi.com/"
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY

@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/feell/AndroidStudioProjects/RickAndMortyAPI/app/src/main/res/drawable-v24/_7740.xml" value="0.18" />
+        <entry key="..\:/Users/feell/AndroidStudioProjects/RickAndMortyAPI/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.18" />
+        <entry key="..\:/Users/feell/AndroidStudioProjects/RickAndMortyAPI/app/src/main/res/drawable/custom_loading.xml" value="0.18" />
         <entry key="..\:/Users/feell/AndroidStudioProjects/RickAndMortyAPI/app/src/main/res/layout/activity_main.xml" value="0.2046875" />
-        <entry key="..\:/Users/feell/AndroidStudioProjects/RickAndMortyAPI/app/src/main/res/layout/custom_layout_home.xml" value="0.33" />
+        <entry key="..\:/Users/feell/AndroidStudioProjects/RickAndMortyAPI/app/src/main/res/layout/custom_layout_home.xml" value="0.25" />
         <entry key="..\:/Users/feell/AndroidStudioProjects/RickAndMortyAPI/app/src/main/res/layout/fragment_home.xml" value="0.25" />
       </map>
     </option>
