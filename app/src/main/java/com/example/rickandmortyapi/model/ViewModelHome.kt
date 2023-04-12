@@ -1,11 +1,13 @@
 package com.example.rickandmortyapi.model
 
 import android.content.Context
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.example.rickandmortyapi.domain.Character
 import com.example.rickandmortyapi.domain.Results
 import com.example.rickandmortyapi.repository.HomeRepository
 import kotlinx.coroutines.Dispatchers
@@ -13,6 +15,7 @@ import kotlinx.coroutines.launch
 
 class ViewModelHome(private val homeRepository: HomeRepository) : ViewModel() {
     var characterList = MutableLiveData<List<Results?>>()
+    var character = MutableLiveData<List<Character?>>()
 
     fun getCharacter(context: Context) {
         viewModelScope.launch(Dispatchers.Main) {
@@ -24,8 +27,10 @@ class ViewModelHome(private val homeRepository: HomeRepository) : ViewModel() {
                         it.copy()
                     }
                     characterList.value = results ?: listOf()
+                    character.value = listOf(body)
                 } else {
-                    Toast.makeText(context, "Erro na API", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, response.message().toString(), Toast.LENGTH_SHORT)
+                        .show()
                 }
             } catch (exception: Exception) {
                 Toast.makeText(context, "${exception.message}", Toast.LENGTH_SHORT).show()

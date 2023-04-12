@@ -8,7 +8,7 @@
     app:cardCornerRadius="8dp"
     android:elevation="8dp"
     android:checkable="true"
-        app:cardBackgroundColor="#595959"
+    app:cardBackgroundColor="#595959"
     android:layout_marginTop="4dp"
     android:layout_marginBottom="4dp">
 
@@ -18,13 +18,14 @@
 
         <ImageView
             android:id="@+id/imageView_custom_home"
-            android:layout_width="125dp"
+            android:layout_width="130dp"
             android:layout_height="0dp"
             android:contentDescription="@string/description_image"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            app:srcCompat="@drawable/ic_launcher_foreground"
+            tools:srcCompat="@drawable/ic_launcher_foreground" />
 
         <TextView
             android:id="@+id/textView_name_custom_home"
@@ -34,9 +35,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:text="@string/text_name"
-            android:textSize="16sp"
-            android:textStyle="bold"
             android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView_custom_home"
             app:layout_constraintTop_toTopOf="@+id/imageView_custom_home" />
@@ -49,18 +50,19 @@
             android:text="@string/text_status"
             android:textColor="@color/white"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/view_alive_custom_home"
-            app:layout_constraintTop_toBottomOf="@+id/textView_name_custom_home" />
+            app:layout_constraintStart_toEndOf="@+id/view_alive_or_dead_custom_home"
+            app:layout_constraintTop_toTopOf="@+id/view_alive_or_dead_custom_home" />
 
         <TextView
             android:id="@+id/textView_species_custom_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="2dp"
             android:text="@string/text_species"
             android:textColor="@color/white"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/textView_status_custom_home"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_status_custom_home"
+            app:layout_constraintStart_toEndOf="@+id/divider"
             app:layout_constraintTop_toTopOf="@+id/textView_status_custom_home" />
 
         <TextView
@@ -111,11 +113,23 @@
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <View
-            android:id="@+id/view_alive_custom_home"
+            android:id="@+id/view_alive_or_dead_custom_home"
             android:layout_width="15dp"
             android:layout_height="15dp"
+            android:background="@drawable/custom_circle_green"
+            android:layout_marginTop="2dp"
             app:layout_constraintStart_toStartOf="@+id/textView_name_custom_home"
             app:layout_constraintTop_toBottomOf="@+id/textView_name_custom_home" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="10dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="2dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_status_custom_home"
+            app:layout_constraintStart_toEndOf="@+id/textView_status_custom_home"
+            app:layout_constraintTop_toTopOf="@+id/textView_status_custom_home" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

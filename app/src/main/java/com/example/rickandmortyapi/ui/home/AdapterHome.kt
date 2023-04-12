@@ -2,9 +2,8 @@ package com.example.rickandmortyapi.ui.home
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -44,6 +43,7 @@ class AdapterHome(private val context: Context) : RecyclerView.Adapter<RecyclerV
         private val textSeeLast = binding.textViewSeeLastCustomHome
         private val textSpecies = binding.textViewSpeciesCustomHome
         private val imageView = binding.imageViewCustomHome
+        private val viewStatus = binding.viewAliveOrDeadCustomHome
 
         fun bind(results: Results) {
             Glide.with(itemView.context)
@@ -57,6 +57,19 @@ class AdapterHome(private val context: Context) : RecyclerView.Adapter<RecyclerV
             textSpecies.text = results.species
             textLastLocation.text = results.location.name
             textSeeLast.text = results.origin.name
+
+            backgroundStatus(results.status, viewStatus)
+        }
+    }
+
+    private fun backgroundStatus(status: String, view: View) {
+        if (status == "Alive") {
+            view.setBackgroundResource(R.drawable.custom_circle_green)
+        }
+        if (status == "Dead") {
+            view.setBackgroundResource(R.drawable.custom_circle_red)
+        } else if (status == "unknown") {
+            view.setBackgroundResource(R.drawable.custom_circle_gray)
         }
     }
 }
