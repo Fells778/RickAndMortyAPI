@@ -14,4 +14,8 @@
     <string name="text_species">Espécie</string>
     <string name="text_rick_and_morty_api">The Rick and Morty API</string>
     <string name="text_pages">Pagina</string>
+    <string name="text_next_pages">Proximo</string>
+    <string name="text_back_pages">Anterior</string>
+    <string name="text_route_name">Nome da rota</string>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.example.rickandmortyapi.ui.home
+package com.example.rickandmortyapi.ui.home.characters
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -11,7 +11,7 @@ import com.example.rickandmortyapi.R
 import com.example.rickandmortyapi.databinding.CustomLayoutHomeBinding
 import com.example.rickandmortyapi.domain.Results
 
-class AdapterHome(private val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class AdapterCharacteres(private val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var listHome = emptyList<Results?>()
 
     @SuppressLint("NotifyDataSetChanged")

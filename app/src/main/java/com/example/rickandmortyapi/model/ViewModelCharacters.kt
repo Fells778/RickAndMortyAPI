@@ -1,21 +1,19 @@
 package com.example.rickandmortyapi.model
 
 import android.content.Context
-import android.widget.ProgressBar
 import android.widget.Toast
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.rickandmortyapi.domain.Character
+import com.example.rickandmortyapi.domain.Info
 import com.example.rickandmortyapi.domain.Results
-import com.example.rickandmortyapi.repository.HomeRepository
+import com.example.rickandmortyapi.repository.CharactersRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class ViewModelHome(private val homeRepository: HomeRepository) : ViewModel() {
+class ViewModelCharacters(private val homeRepository: CharactersRepository) : ViewModel() {
     var characterList = MutableLiveData<List<Results?>>()
     var character = MutableLiveData<List<Character?>>()
+    var pagesInfo = MutableLiveData<List<Info>>()
 
     fun getCharacter(context: Context) {
         viewModelScope.launch(Dispatchers.Main) {
@@ -27,7 +25,6 @@ class ViewModelHome(private val homeRepository: HomeRepository) : ViewModel() {
                         it.copy()
                     }
                     characterList.value = results ?: listOf()
-                    character.value = listOf(body)
                 } else {
                     Toast.makeText(context, response.message().toString(), Toast.LENGTH_SHORT)
                         .show()
@@ -39,10 +36,12 @@ class ViewModelHome(private val homeRepository: HomeRepository) : ViewModel() {
         }
     }
 
-    class ViewModelHomeFactory(private val homeRepository: HomeRepository) :
+
+
+    class ViewModelHomeFactory(private val homeRepository: CharactersRepository) :
         ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            return modelClass.getConstructor(HomeRepository::class.java).newInstance(homeRepository)
+            return modelClass.getConstructor(CharactersRepository::class.java).newInstance(homeRepository)
         }
     }
 }

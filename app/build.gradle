@@ -32,24 +32,25 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
+    namespace 'com.example.rickandmortyapi'
 }
 
 dependencies {
-    implementation 'androidx.room:room-common:2.5.0'
-    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.8.1'
-    def nav_version = "2.5.1"
+    implementation 'androidx.room:room-common:2.5.1'
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.9.5'
+    def nav_version = "2.5.3"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.10"
 
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.6.0'
-    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.core:core-ktx:1.10.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
@@ -87,12 +88,15 @@ dependencies {
 
     // Lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
 
     //Deixa a imagem redonda...CircleImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     //Splash Screen...
-    implementation 'androidx.core:core-splashscreen:1.0.0'
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+
+    //Shimmer Effect...
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 }
